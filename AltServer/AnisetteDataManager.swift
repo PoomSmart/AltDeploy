@@ -32,7 +32,7 @@ class AnisetteDataManager: NSObject
         }
         self.anisetteDataTimers[requestUUID] = timer
         
-		RunLoop.main.add(timer, forMode: .defaultRunLoopMode)
+		RunLoop.main.add(timer, forMode: RunLoop.Mode.default)
         
         DistributedNotificationCenter.default().postNotificationName(Notification.Name("com.rileytestut.AltServer.FetchAnisetteData"), object: nil, userInfo: ["requestUUID": requestUUID], options: .deliverImmediately)
     }
@@ -46,7 +46,7 @@ private extension AnisetteDataManager
                 
         if
             let archivedAnisetteData = userInfo["anisetteData"] as? Data,
-            let anisetteData = try? NSKeyedUnarchiver.unarchivedObject(ofClass: ALTAnisetteData.self, from: archivedAnisetteData)
+            let anisetteData = ((try? NSKeyedUnarchiver.unarchivedObject(ofClass: ALTAnisetteData.self, from: archivedAnisetteData)) as ALTAnisetteData??)
         {
 			if let range = anisetteData!.deviceDescription.lowercased().range(of: "(com.apple.mail")
             {

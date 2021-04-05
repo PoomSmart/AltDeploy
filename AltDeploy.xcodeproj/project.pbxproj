@@ -44,7 +44,6 @@
 		CEA6378223C3941200CEC7A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA6377823C3941200CEC7A9 /* Main.storyboard */; };
 		CEA6378323C3941200CEC7A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA6377A23C3941200CEC7A9 /* main.m */; };
 		CEA6378423C3941200CEC7A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA6377C23C3941200CEC7A9 /* AppDelegate.m */; };
-		CEA6378523C3941200CEC7A9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEA6377D23C3941200CEC7A9 /* Info.plist */; };
 		CEA6378623C3941200CEC7A9 /* apple.pem in Resources */ = {isa = PBXBuildFile; fileRef = CEA6377F23C3941200CEC7A9 /* apple.pem */; };
 		CEBF417D23C2599C004338D2 /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBF417C23C2599C004338D2 /* SAMKeychainQuery.m */; };
 		CEBF418023C259CA004338D2 /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBF417F23C259CA004338D2 /* SAMKeychain.m */; };
@@ -505,11 +504,12 @@
 		CEA24A9123C10F8900A6DB11 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = PixelOmer;
 				TargetAttributes = {
 					CEA24A9823C10F8900A6DB11 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -536,7 +536,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA6378523C3941200CEC7A9 /* Info.plist in Resources */,
 				CEA6378223C3941200CEC7A9 /* Main.storyboard in Resources */,
 				CEA6378023C3941200CEC7A9 /* Assets.xcassets in Resources */,
 				CEA6378623C3941200CEC7A9 /* apple.pem in Resources */,
@@ -605,6 +604,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -627,6 +627,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -656,6 +657,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				TARGETED_DEVICE_FAMILY = Mac;
 			};
 			name = Debug;
 		};
@@ -663,6 +665,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -685,6 +688,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -707,17 +711,20 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				TARGETED_DEVICE_FAMILY = Mac;
 			};
 			name = Release;
 		};
 		CEA24AAE23C10F8A00A6DB11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = x86_64;
 				CODE_SIGN_ENTITLEMENTS = AltDeploy/AltDeploy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 9UQFRSGV3G;
+				DEVELOPMENT_TEAM = HWW5CTH5AN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = (
@@ -735,24 +742,25 @@
 					"$(PROJECT_DIR)/Dependencies",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				OTHER_CFLAGS = "-Dunix=1";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pixelomer.altdeploy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AltDeploy-Bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		CEA24AAF23C10F8A00A6DB11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = x86_64;
 				CODE_SIGN_ENTITLEMENTS = AltDeploy/AltDeploy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 9UQFRSGV3G;
+				DEVELOPMENT_TEAM = HWW5CTH5AN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/include,
@@ -769,12 +777,12 @@
 					"$(PROJECT_DIR)/Dependencies",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				OTHER_CFLAGS = "-Dunix=1";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pixelomer.altdeploy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AltDeploy-Bridge.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

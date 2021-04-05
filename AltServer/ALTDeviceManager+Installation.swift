@@ -534,12 +534,12 @@ extension ALTDeviceManager: NSTextFieldDelegate
         set { objc_setAssociatedObject(self, &securityCodeTextFieldKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
     
-    public override func controlTextDidChange(_ obj: Notification)
+    public func controlTextDidChange(_ obj: Notification)
     {
         self.validate()
     }
     
-    public override func controlTextDidEndEditing(_ obj: Notification)
+    public func controlTextDidEndEditing(_ obj: Notification)
     {
         self.validate()
     }
