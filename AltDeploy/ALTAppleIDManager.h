@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray <NSDictionary *> *)getAllAppleIDs;
 - (BOOL)getLastAppleID:(NSString *_Nullable*_Nullable)usernamePt;
 - (NSString *)passwordOfAppleID:(NSString *)username;
-- (BOOL)addAppleID:(NSString *)username password:(NSString *)password;
+- (BOOL)addAppleID:(NSString *)username password:(NSString *)password error:(NSError **)error;
 - (void)removeAppleID:(NSString *)username;
 
 @end

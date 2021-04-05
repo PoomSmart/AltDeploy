@@ -25,9 +25,17 @@
     if (!self.usernameField.stringValue.length || !self.passwordField.stringValue.length) {
         return;
     }
-    [[ALTAppleIDManager sharedManager] addAppleID:self.usernameField.stringValue password:self.passwordField.stringValue];
+    NSError *error;
+    [[ALTAppleIDManager sharedManager] addAppleID:self.usernameField.stringValue password:self.passwordField.stringValue error:&error];
     [self.view.window close];
     [self.delegate didAddAppleID];
+    if (error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSAlert *alert = [NSAlert alertWithError:error];
+            [alert addButtonWithTitle:@"Dismiss"];
+            [alert runModal];
+        });
+    }
 }
 
 @end

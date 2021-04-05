@@ -27,7 +27,7 @@
     return YES;
 }
 
-- (BOOL)addAppleID:(NSString *)username password:(NSString *)password {
+- (BOOL)addAppleID:(NSString *)username password:(NSString *)password error:(NSError **)error {
     for (NSDictionary *account in [SAMKeychain accountsForService:NSBundle.mainBundle.bundleIdentifier]) {
         if ([account[kSAMKeychainAccountKey] isEqualToString:username]) {
             [SAMKeychain deletePasswordForService:NSBundle.mainBundle.bundleIdentifier account:account[kSAMKeychainAccountKey]];
